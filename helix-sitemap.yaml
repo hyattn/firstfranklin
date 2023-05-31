@@ -2,6 +2,6 @@ version: 1
 
 sitemaps:
   default: 
-    origin: https://main--firstfranklin--hyattn.hlx.page
+    origin: https://main--firstfranklin--hyattn.hlx.live
     source: /sitemap-index.json
     destination: /sitemap.xml
