@@ -6,26 +6,26 @@ indices:
     properties:
       lastModified:
         select: none
-        value: parseTimestanp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
+        value: |
+          parseTimestanp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
       title:
         select: head > meta[property="og:title"]
-        value: attribute(el, "content")
+        value: | 
+          attribute(el, 'content')
       image:
         select: head > meta[property="og:image"]
-        value: attribute(el, "content")
+        value: |
+          match(attribute(el, 'content'), "https:\/\/[^/]+(/.*)")
       description:
         select: head > meta[property="og:description"]
-        value: attribute(el, "content")
+        value: |
+          attribute(el, 'content')
       date:
         select: head > meta[property="og:date"]
-        value: attribute(el, "content"), "MM/DD/YYYY")
+        value: |
+         parseTimestamp(attribute(el, 'content'), "MM/DD/YYYY")
       robots:
         select: head > meta[name="robots"]
-        value: attribute(el, "content")
-
-  form:
-    target: /email-form.xslx
-    include: /form/*
-    properties:
-
+        value: |
+          attribute(el, 'content')
   
