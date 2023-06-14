@@ -22,7 +22,7 @@
   @media (min-width: 900px) {
     .columns > div {
       align-items: center;
-      flex-direction: unset;
+      flex-direction: row;
       gap: 32px;
     }
   
